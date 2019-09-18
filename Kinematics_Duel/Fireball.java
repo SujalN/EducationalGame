@@ -18,7 +18,6 @@ public class Fireball extends SmoothMover
     {
         addToVelocity(MyWorld.GRAVITY);
         move();
-        checkCollision();
     }    
     
     /**
@@ -48,43 +47,16 @@ public class Fireball extends SmoothMover
     /**
      * 
      */
-    private void checkCollision()
-    {
-        if (isTouching(Floor.class) || isAtEdge())
-        {
-            MyWorld world = (MyWorld) getWorld();
-            world.removeObject(this);
-         }
-        else
-        {
-            checkHitTarget();
-        }
-    }
-    
-    /**
-     * 
-     */
-    private void checkHitTarget() 
-    {
-         // To react to only one type (like Enemy) change Actor to that type
-         Actor target = getOneIntersectingObject(Target.class);
-         if (target != null)
-         {
-             MyWorld world = (MyWorld) getWorld();
-             world.addObject(new Fire(), target.getX(), target.getY());
-             world.removeObject(target);
-             world.removeObject(this);
-             return; // in case of multiple if statements
-         }
-         
-         Actor igloo = getOneIntersectingObject(Igloo.class);
-         if (igloo != null)
-         {
-             MyWorld world = (MyWorld) getWorld();
-             world.addObject(new Fire(), igloo.getX(), igloo.getY());
-             world.removeObject(igloo);
-             world.removeObject(this);
-             return; // in case of multiple if statements
-         }
-     }
+    //private void checkCollision()
+    //{
+    //    if ()
+    //    {
+    //        MyWorld world = (MyWorld) getWorld();
+    //        world.removeObject(this);
+    //     }
+    //    else
+    //    {
+    //        checkHitTarget();
+    //    }
+    //}
 }

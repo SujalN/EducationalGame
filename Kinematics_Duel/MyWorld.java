@@ -3,7 +3,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 /**
  * Write a description of class MyWorld here.
  * 
- * @author (Ricky Chavez) 
+ * @author (Sujal Nahata) 
  * @version (11/2/17)
  */
 public class MyWorld extends World
@@ -23,50 +23,17 @@ public class MyWorld extends World
     {    
         // Create a new world with 600x400 cells with a cell size of 1x1 pixels.
         super(1078, 672, 1); 
-        
-        prepareFloor();
-        preparePlayer();
-        prepareBalloon();
-        prepareNope();
-        prepareBase();
-        prepareIgloo();
+        preparePlayer1();
+        preparePlayer2();
     }
     
-    public void prepareFloor()
+    public void preparePlayer1()
     {
-        for (int i = 0; i < 19; i++)
-        {
-            int x = i * gWidth + 16;
-            int y = gHeight + 16;
-            addObject(new Floor(), x, y);
-        }
+        addObject(new Player1(), 80, 600);
     }
     
-    public void preparePlayer()
+    public void preparePlayer2()
     {
-        addObject(new Player(), 75, 600);
-    }
-    
-    public void prepareBalloon()
-    {
-        addObject(new Balloon(), Greenfoot.getRandomNumber(400) + 200, Greenfoot.getRandomNumber(327));
-    }
-    
-    public void prepareNope()
-    {
-        addObject(new Nope(), Greenfoot.getRandomNumber(400) + 200, 323);
-    }
-    
-    public void prepareBase()
-    {
-        for (int i = 0; i < 4; i++)
-        {
-            addObject(new Target(), setX[i], 340);
-        }
-    }
-    
-    public void prepareIgloo()
-    {
-        addObject(new Igloo(), Greenfoot.getRandomNumber(400) + 200, 323);
+        addObject(new Player2(), 1000, 600);
     }
 }
