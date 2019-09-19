@@ -8,7 +8,7 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player1 extends Actor
 {
-    private static final int reloadFireball = 10;
+    private static final int reloadFireball = 50;
 
     private int reloadJDAMDelayCount;
     private int reloadBombDelayCount;
