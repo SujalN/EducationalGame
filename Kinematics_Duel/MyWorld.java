@@ -26,14 +26,12 @@ public class MyWorld extends World
         preparePlayer1();
         preparePlayer2();
     }
-    
     public void preparePlayer1()
     {
-        addObject(new Player1(), 80, 600);
+        addObject(new Player1(), 200, 600);
     }
-    
     public void preparePlayer2()
     {
-        addObject(new Player2(), 1000, 600);
+        addObject(new Player2(), 878, 600);
     }
 }

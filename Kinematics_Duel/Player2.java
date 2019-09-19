@@ -8,15 +8,16 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
  */
 public class Player2 extends Actor
 {
-    private static final int reloadJDAM = 20;
-    private static final int reloadBomb = 20;
-    private static final int reloadFireball = 20;
+    private static final int reloadFireball = 10;
 
     private int reloadJDAMDelayCount;
     private int reloadBombDelayCount;
     private int reloadFireballDelayCount;
 
-    int angle = getRotation();
+    int angle = -getRotation();
+    
+    int rotateRate = 3;
+    int rotateIntegration = 0;
 
     /**
      * Act - do whatever the Cannon wants to do. This method is called whenever
@@ -24,87 +25,39 @@ public class Player2 extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.isKeyDown("left") && getX() >30) 
+        if(Greenfoot.isKeyDown("left") && getX() >100) 
         {
-            setLocation(getX() -2, getY());
+            setLocation(getX() -4, getY());
         }
-        if(Greenfoot.isKeyDown("right") && getX() < 80) 
+        if(Greenfoot.isKeyDown("right") && getX() < 1000) 
         {
-            setLocation(getX() +2, getY());
+            setLocation(getX() +4, getY());
         }
-        if(Greenfoot.isKeyDown("up"))
+        if(Greenfoot.isKeyDown("up") && rotateIntegration>=-90)
         {
-            turn(-2);
+            turn(rotateRate);
+            rotateIntegration = rotateIntegration - rotateRate;
         }
-        if(Greenfoot.isKeyDown("down"))
+        if(Greenfoot.isKeyDown("down") && rotateIntegration<=0)
         {
-            turn(2);
-        }
-        
-        if ("v".equals(Greenfoot.getKey()))
-        {
-            shoot();
+            turn(-rotateRate);
+            rotateIntegration = rotateIntegration + rotateRate;
         }
 
-        if (Greenfoot.isKeyDown("c"))      
-        {
-            fire();
-        }
-
-        if (Greenfoot.isKeyDown("z"))
-        {
-            bomb();
-        }
-
-        if (Greenfoot.isKeyDown("x"))
+        if (Greenfoot.isKeyDown("enter"))
         {
             blam();
         }
-
-        reloadJDAMDelayCount++;
-        reloadBombDelayCount++;
         reloadFireballDelayCount++;
-    }  
-
-    public Player2()
-    {
-        reloadJDAMDelayCount = 5;
-    }
-
-    private void shoot()
-    {
-        int angle = getRotation(); // adjust angle for image
-    }
-
-    private void fire()
-    {
-        if(reloadJDAMDelayCount >= reloadJDAM)
-        {
-            Greenfoot.playSound("fire.wav");
-            int angle = getRotation(); 
-            //munition.move(15); 
-            reloadJDAMDelayCount = 0;
-        }
-    }
-
-    private void bomb()
-    {
-        if (reloadBombDelayCount >= reloadBomb)
-        {
-            Greenfoot.playSound("launch.wav");
-            reloadBombDelayCount = 0;
-
-        }
-    }
-
+    } 
     private void blam()
     {
         if (reloadFireballDelayCount >= reloadFireball)
         {
-            Greenfoot.playSound("fire.wav");
-            int angle = getRotation(); // adjust angle for image
-            Fireball fb = new Fireball(new Vector(angle, 12));
-            getWorld().addObject(fb, getX(), getY());
+            Greenfoot.playSound("uppercut.wav");
+            int angle = getRotation()+210; // adjust angle for image
+            Fireball fb = new Fireball(new Vector(angle, 15));
+            getWorld().addObject(fb, getX(), getY()-10);
             fb.setRotation(angle);
             fb.move(0); // clear the cannon barrel
             reloadFireballDelayCount = 0;
