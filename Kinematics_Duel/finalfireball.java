@@ -1,12 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Cannonball here.
+ * Write a description of class finalfireball here.
  * 
- * @author (Bryan Ortiz) 
- * @version (11/2/17)
+ * @author (your name) 
+ * @version (a version number or a date)
  */
-public class FireballBlu extends SmoothMover
+public class finalfireball extends SmoothMover
 {
     private static final int GROUND_HEIGHT = 360 - 6;
     boolean collision = false;
@@ -34,7 +34,7 @@ public class FireballBlu extends SmoothMover
     /**
      * 
      */
-    public FireballBlu()
+    public finalfireball()
     {
         this(new Vector(0, 6));
     }
@@ -42,7 +42,7 @@ public class FireballBlu extends SmoothMover
     /**
      * 
      */
-    public FireballBlu(Vector velocity)
+    public finalfireball(Vector velocity)
     {
         super(velocity);
     }
@@ -60,19 +60,12 @@ public class FireballBlu extends SmoothMover
     private void checkCollision()
     {
         MyWorld world = (MyWorld) getWorld();
-        Actor midair = getOneIntersectingObject(FireballBlu.class);
-        if (midair != null && mid == false)
-        {
-            mid = true;
-            Greenfoot.playSound("fire.wav");
-            world.addObject(new graze(),this.getX(), this.getY());
-            
-        }
+        Actor midair = getOneIntersectingObject(Fireball.class);
         if (getY()>601)
         {
             Greenfoot.playSound("fire.wav");
             collision = true;
-            world.addObject(new kaboom(),this.getX(), this.getY());
+            world.addObject(new finalbomb(),this.getX(), this.getY());
             world.removeObject(this);
 
         }

@@ -23,7 +23,7 @@ public class Player2 extends Actor
      */
     public void act() 
     {
-        if(Greenfoot.isKeyDown("left") && getX() >100) 
+        if(Greenfoot.isKeyDown("left") && getX() >100 && !collideCheck()) 
         {
             setLocation(getX() -4, getY());
         }
@@ -42,7 +42,7 @@ public class Player2 extends Actor
             rotateIntegration = rotateIntegration + rotateRate;
         }
 
-        if (Greenfoot.isKeyDown("enter"))
+        if (Greenfoot.isKeyDown("shift"))
         {
             blam();
         }
@@ -64,6 +64,18 @@ public class Player2 extends Actor
             reloadFireballDelayCount = 0;
         }
     }
+    public boolean collideCheck()
+    {
+        Actor target1 = getOneIntersectingObject(Player1.class);
+        if (target1 != null)
+        {
+           return true;
+        }
+        else
+        {
+            return false;
+        }
+    }
     public void freeze()
     {
         MyWorld world = (MyWorld) getWorld();
@@ -79,6 +91,16 @@ public class Player2 extends Actor
             {
                Player1_S ps = new Player1_S(p1.getRotation());
                getWorld().addObject(ps, p1.getX(), getY());
+               
+               int vo = Integer.parseInt(Greenfoot.ask("Blue down - choose an initial velocity (vo) in the equation d=vot-0.5gt^2 to shoot a final projectile.\nHint: try between 5-15!"));
+               int theta = Integer.parseInt(Greenfoot.ask("Choose an angle (theta) in vocos(theta) and vosin(theta)."));
+               
+               theta = theta + 180;
+               
+               Greenfoot.playSound("uppercut.wav");
+               finalfireball fb = new finalfireball(new Vector(theta, vo));
+               getWorld().addObject(fb, getX(), getY()-10);
+               fb.setRotation(angle);
             }
         }
     }

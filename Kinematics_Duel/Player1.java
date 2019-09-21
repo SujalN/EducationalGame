@@ -23,13 +23,11 @@ public class Player1 extends Actor
      */
     public void act() 
     {
-
-       
         if(Greenfoot.isKeyDown("a") && getX() >100) 
         {
             setLocation(getX() -4, getY());
         }
-        if(Greenfoot.isKeyDown("d") && getX() < 1000) 
+        if(Greenfoot.isKeyDown("d") && getX() < 1000 && !collideCheck()) 
         {
             setLocation(getX() +4, getY());
         }
@@ -54,9 +52,17 @@ public class Player1 extends Actor
     {
         int angle = getRotation(); // adjust angle for image
     }
-    public int determineX()
+    public boolean collideCheck()
     {
-        return getX();
+        Actor target2 = getOneIntersectingObject(Player2.class);
+        if (target2 != null)
+        {
+           return true;
+        }
+        else
+        {
+            return false;
+        }
     }
     private void fire()
     {
@@ -89,7 +95,15 @@ public class Player1 extends Actor
                Player2_S ps = new Player2_S(p2.getRotation());
                getWorld().addObject(ps, p2.getX(), getY());
                
-               while 
+               int vo = Integer.parseInt(Greenfoot.ask("Red down - choose an initial velocity (vo) in the equation d=(vo)t-0.5gt^2 to shoot a final projectile. \nHint: try between 5-15!"));
+               int theta = Integer.parseInt(Greenfoot.ask("Choose an angle (theta) in vocos(theta) and vosin(theta)."));
+               
+               theta = -theta;
+               
+               Greenfoot.playSound("uppercut.wav");
+               finalfireball fb = new finalfireball(new Vector(theta, vo));
+               getWorld().addObject(fb, getX(), getY()-10);
+               fb.setRotation(angle);
                
             }
         }

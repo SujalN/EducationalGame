@@ -1,14 +1,14 @@
 #BlueJ class context
-comment0.target=FireballBlu
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Cannonball\ here.\r\n\ \r\n\ @author\ (Bryan\ Ortiz)\ \r\n\ @version\ (11/2/17)\r\n
+comment0.target=finalfireball
+comment0.text=\r\n\ Write\ a\ description\ of\ class\ finalfireball\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
 comment1.params=
 comment1.target=void\ act()
 comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Cannonball\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
 comment2.params=
-comment2.target=FireballBlu()
+comment2.target=finalfireball()
 comment2.text=\r\n\ \r\n
 comment3.params=velocity
-comment3.target=FireballBlu(Vector)
+comment3.target=finalfireball(Vector)
 comment3.text=\r\n\ \r\n
 comment4.params=world
 comment4.target=void\ addedToWorld(greenfoot.World)

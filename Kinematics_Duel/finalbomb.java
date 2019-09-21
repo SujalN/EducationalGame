@@ -1,55 +1,47 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class graze here.
+ * Write a description of class finalbomb here.
  * 
  * @author (your name) 
  * @version (a version number or a date)
  */
-public class graze extends Actor
+
+public class finalbomb extends Actor
 {
     /**
-     * Act - do whatever the graze wants to do. This method is called whenever
+     * Act - do whatever the kaboom wants to do. This method is called whenever
      * the 'Act' or 'Run' button gets pressed in the environment.
      */
+    
+    boolean hit = false;
+    
     public void act() 
     {
-        
-        hitreg();
-        
         int alpha = getImage().getTransparency();
+        hitreg();
         if (alpha > 10)
         {
             getImage().setTransparency(alpha - 10);
         }
         else
         {
+            if (hit == true);
+            else
+            {
+                Greenfoot.playSound("fail.wav");
+            }
             getWorld().removeObject(this);
+            MyWorld world = (MyWorld) getWorld();
         }
-        
     }    
     public void hitreg()
     {
         MyWorld world = (MyWorld) getWorld();
-        Actor target1 = getOneIntersectingObject(Player1.class);
-        if (target1 != null)
-        {
-           //Greenfoot.playSound("marioded.wav");
-           world.removeObject(target1);
-           getWorld().removeObjects(getWorld().getObjects(Player2.class));
-           //world.preparePlayer2_S();
-        }
-        Actor target2 = getOneIntersectingObject(Player2.class);
-        if (target2 != null)
-        {
-           //Greenfoot.playSound("marioded.wav");
-           world.removeObject(target2);
-           getWorld().removeObjects(getWorld().getObjects(Player1.class));
-           //world.preparePlayer1_S();
-        }
         Actor target11 = getOneIntersectingObject(Player1_S.class);
         if (target11 != null)
         {
+           hit = true;
            Greenfoot.playSound("marioded.wav");
            world.removeObject(target11);
            //world.preparePlayer1_S();
@@ -57,6 +49,7 @@ public class graze extends Actor
         Actor target22 = getOneIntersectingObject(Player2_S.class);
         if (target22 != null)
         {
+           hit = true;
            Greenfoot.playSound("marioded.wav");
            world.removeObject(target22);
            //world.preparePlayer1_S();
