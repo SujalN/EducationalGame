@@ -20,11 +20,11 @@ public class Player2_S extends Actor
     {
        if(Greenfoot.isKeyDown("left") && getX() >100) 
         {
-            setLocation(getX() -2, getY());
+            setLocation(getX() -4, getY());
         }
        if(Greenfoot.isKeyDown("right") && getX() < 1000) 
        {
-           setLocation(getX() +2, getY());
+           setLocation(getX() +4, getY());
        }
        if(Greenfoot.isKeyDown("up"))
         {

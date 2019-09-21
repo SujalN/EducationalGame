@@ -8,7 +8,7 @@ import java.util.Scanner;
  */
 public class Player2 extends Actor
 {
-    private static final int reloadFireball = 50;
+    private static final int reloadFireball = 40;
 
     private int reloadFireballDelayCount;
 

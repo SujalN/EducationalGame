@@ -28,6 +28,7 @@ public class MyWorld extends World
         super(1078, 672, 1); 
         preparePlayer1();
         preparePlayer2();
+        prepareTitle();
         //playmusic();
     }
     public void preparePlayer1()
@@ -39,6 +40,11 @@ public class MyWorld extends World
     {
         Player2 p2 = new Player2();
         addObject(p2, 878, 600);
+    }
+    public void prepareTitle()
+    {
+        DuelTitle title = new DuelTitle();
+        addObject(title, 539, 186);
     }
     public void playmusic()
     {

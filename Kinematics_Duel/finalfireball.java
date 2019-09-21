@@ -61,6 +61,14 @@ public class finalfireball extends SmoothMover
     {
         MyWorld world = (MyWorld) getWorld();
         Actor midair = getOneIntersectingObject(Fireball.class);
+        /*
+        if (midair != null && mid == false)
+        {
+            mid = true;
+            Greenfoot.playSound("fire.wav");
+            world.addObject(new finalbomb(),this.getX(), this.getY());
+        }
+        */
         if (getY()>601)
         {
             Greenfoot.playSound("fire.wav");
