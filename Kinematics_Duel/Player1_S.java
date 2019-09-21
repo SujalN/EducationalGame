@@ -16,6 +16,8 @@ public class Player1_S extends Actor
     int rotateRate = 30;
     int rotateIntegration = 0;
     
+    int taunt = 0;
+    
     public void act() 
     {
         if(Greenfoot.isKeyDown("a") && getX() >100) 
@@ -26,13 +28,17 @@ public class Player1_S extends Actor
         {
             setLocation(getX() +4, getY());
         }
-        if(Greenfoot.isKeyDown("w"))
+        if(Greenfoot.isKeyDown("w") && taunt != 1)
         {
             turn(-rotateRate);
+            Greenfoot.playSound("kidlaugh.mp3");
+            taunt = 1;
         }
-        if(Greenfoot.isKeyDown("s"))
+        if(Greenfoot.isKeyDown("s") && taunt != 2)
         {
             turn(rotateRate);
+            Greenfoot.playSound("missionfailed.mp3");
+            taunt = 2;
         }
     }   
     public Player1_S(int rotation)

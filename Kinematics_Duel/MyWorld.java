@@ -14,8 +14,6 @@ public class MyWorld extends World
     int setX[] = {200, 300, 400, 500};
     boolean gameover = false;
     
-    GreenfootSound lunch = new GreenfootSound("lunch.wav");
-    
     public static final Vector GRAVITY = new Vector(0.0, 0.2);
     
     /**
@@ -45,9 +43,5 @@ public class MyWorld extends World
     {
         DuelTitle title = new DuelTitle();
         addObject(title, 539, 186);
-    }
-    public void playmusic()
-    {
-        lunch.playLoop();
     }
 }

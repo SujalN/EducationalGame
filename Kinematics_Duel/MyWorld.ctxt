@@ -10,6 +10,4 @@ comment3.params=
 comment3.target=void\ preparePlayer2()
 comment4.params=
 comment4.target=void\ prepareTitle()
-comment5.params=
-comment5.target=void\ playmusic()
-numComments=6
+numComments=5
