@@ -10,8 +10,6 @@ public class Player2 extends Actor
 {
     private static final int reloadFireball = 50;
 
-    private int reloadJDAMDelayCount;
-    private int reloadBombDelayCount;
     private int reloadFireballDelayCount;
 
     int angle = -getRotation();
@@ -49,18 +47,39 @@ public class Player2 extends Actor
             blam();
         }
         reloadFireballDelayCount++;
+        freeze();
     } 
     private void blam()
     {
         if (reloadFireballDelayCount >= reloadFireball)
         {
             Greenfoot.playSound("uppercut.wav");
+            turn(4);
+            rotateIntegration = rotateIntegration - 4;
             int angle = getRotation()+210; // adjust angle for image
             Fireball fb = new Fireball(new Vector(angle, 15));
             getWorld().addObject(fb, getX(), getY()-10);
             fb.setRotation(angle);
             fb.move(0); // clear the cannon barrel
             reloadFireballDelayCount = 0;
+        }
+    }
+    public void freeze()
+    {
+        MyWorld world = (MyWorld) getWorld();
+        Actor hitreg = getOneIntersectingObject(kaboom.class);
+        for(Player1 e : world.getObjects(Player1.class))
+        {
+            Player1 p1 = (Player1) world.getObjects(Player1.class).get(0);
+            if (hitreg == null)
+            {
+                hitreg = getOneIntersectingObject(graze.class);
+            }
+            if (hitreg != null)
+            {
+               Player1_S ps = new Player1_S(p1.getRotation());
+               getWorld().addObject(ps, p1.getX(), getY());
+            }
         }
     }
 }

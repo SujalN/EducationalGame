@@ -12,6 +12,9 @@ public class MyWorld extends World
     int gHeight = 360;
     
     int setX[] = {200, 300, 400, 500};
+    boolean gameover = false;
+    
+    GreenfootSound lunch = new GreenfootSound("lunch.wav");
     
     public static final Vector GRAVITY = new Vector(0.0, 0.2);
     
@@ -25,23 +28,20 @@ public class MyWorld extends World
         super(1078, 672, 1); 
         preparePlayer1();
         preparePlayer2();
-        
-   
+        //playmusic();
     }
     public void preparePlayer1()
     {
-        addObject(new Player1(), 200, 600);
-    }
-    public void preparePlayer1_S()
-    {
-        addObject(new Player1_S(), 200, 600);
+        Player1 p1 = new Player1();
+        addObject(p1, 200, 600);
     }
     public void preparePlayer2()
     {
-        addObject(new Player2(), 878, 600);
+        Player2 p2 = new Player2();
+        addObject(p2, 878, 600);
     }
-    public void preparePlayer2_S()
+    public void playmusic()
     {
-        addObject(new Player2_S(), 878, 600);
+        lunch.playLoop();
     }
 }

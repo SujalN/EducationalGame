@@ -16,4 +16,8 @@ public class Player2_S extends Actor
     {
        
     }    
+    public Player2_S(int rotation)
+    {
+        setRotation(rotation);
+    }
 }

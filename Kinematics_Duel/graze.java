@@ -32,29 +32,20 @@ public class graze extends Actor
     {
         MyWorld world = (MyWorld) getWorld();
         Actor target1 = getOneIntersectingObject(Player1.class);
-
         if (target1 != null)
         {
-            Greenfoot.playSound("marioded.wav");
-            world.preparePlayer1_S();
-            world.removeObject(target1);
-
+           Greenfoot.playSound("marioded.wav");
+           world.removeObject(target1);
+           getWorld().removeObjects(getWorld().getObjects(Player2.class));
+           //world.preparePlayer2_S();
         }
-        //world.preparePlayer1_S();
-        
         Actor target2 = getOneIntersectingObject(Player2.class);
-
-
         if (target2 != null)
         {
-            Greenfoot.playSound("marioded.wav");
-            world.preparePlayer2_S();
-            world.removeObject(target2);
-            
-
+           Greenfoot.playSound("marioded.wav");
+           world.removeObject(target2);
+           getWorld().removeObjects(getWorld().getObjects(Player1.class));
+           //world.preparePlayer1_S();
         }
-        //world.preparePlayer2_S();
-        
-
     }
 }
