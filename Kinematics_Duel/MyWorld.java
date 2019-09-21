@@ -30,8 +30,16 @@ public class MyWorld extends World
     {
         addObject(new Player1(), 200, 600);
     }
+    public void preparePlayer1_S()
+    {
+        addObject(new Player1_S(), 200, 600);
+    }
     public void preparePlayer2()
     {
         addObject(new Player2(), 878, 600);
+    }
+    public void preparePlayer2_S()
+    {
+        addObject(new Player2_S(), 878, 600);
     }
 }

@@ -25,7 +25,8 @@ public class Player1 extends Actor
      */
     public void act() 
     {
-        
+
+       
         if(Greenfoot.isKeyDown("a") && getX() >100) 
         {
             setLocation(getX() -4, getY());
