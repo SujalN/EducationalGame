@@ -33,12 +33,14 @@ public class kaboom extends Actor
         {
             Greenfoot.playSound("marioded.wav");
             world.removeObject(target1);
+           world.preparePlayer1_S();
         }
         Actor target2 = getOneIntersectingObject(Player2.class);
         if (target2 != null)
         {
             Greenfoot.playSound("marioded.wav");
             world.removeObject(target2);
+            world.preparePlayer2_S();
         }
     }
 }

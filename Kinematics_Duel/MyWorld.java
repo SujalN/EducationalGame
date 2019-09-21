@@ -25,6 +25,8 @@ public class MyWorld extends World
         super(1078, 672, 1); 
         preparePlayer1();
         preparePlayer2();
+        
+   
     }
     public void preparePlayer1()
     {

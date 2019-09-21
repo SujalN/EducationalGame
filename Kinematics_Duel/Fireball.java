@@ -66,6 +66,7 @@ public class Fireball extends SmoothMover
             mid = true;
             Greenfoot.playSound("fire.wav");
             world.addObject(new graze(),this.getX(), this.getY());
+            
         }
         if (getY()>601)
         {
@@ -73,6 +74,7 @@ public class Fireball extends SmoothMover
             collision = true;
             world.addObject(new kaboom(),this.getX(), this.getY());
             world.removeObject(this);
+
         }
     }
 }

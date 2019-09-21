@@ -14,6 +14,6 @@ public class Player1_S extends Actor
      */
     public void act() 
     {
-        // Add your action code here.
+      
     }    
 }

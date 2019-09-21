@@ -14,8 +14,10 @@ public class graze extends Actor
      */
     public void act() 
     {
-        int alpha = getImage().getTransparency();
+        
         hitreg();
+        
+        int alpha = getImage().getTransparency();
         if (alpha > 10)
         {
             getImage().setTransparency(alpha - 10);
@@ -24,6 +26,7 @@ public class graze extends Actor
         {
             getWorld().removeObject(this);
         }
+        
     }    
     public void hitreg()
     {
@@ -33,9 +36,11 @@ public class graze extends Actor
         if (target1 != null)
         {
             Greenfoot.playSound("marioded.wav");
+            world.preparePlayer1_S();
             world.removeObject(target1);
-            ((MyWorld)getWorld()).preparePlayer1_S();
+
         }
+        //world.preparePlayer1_S();
         
         Actor target2 = getOneIntersectingObject(Player2.class);
 
@@ -43,9 +48,12 @@ public class graze extends Actor
         if (target2 != null)
         {
             Greenfoot.playSound("marioded.wav");
+            world.preparePlayer2_S();
             world.removeObject(target2);
-            ((MyWorld)getWorld()).preparePlayer2_S();
+            
+
         }
+        //world.preparePlayer2_S();
         
 
     }
