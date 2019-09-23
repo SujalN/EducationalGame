@@ -1,17 +1,20 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class finalbomb here.
+ * finalbomb defines actions of the last explosion that follows launching
+ * firebal with velocity equation
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ * @version 9/22/19
  */
 
 public class finalbomb extends Actor
 {
     /**
-     * Act - do whatever the kaboom wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Calls hitreg and defines transparency for collison effect
      */
     
     boolean hit = false;
@@ -35,6 +38,10 @@ public class finalbomb extends Actor
             MyWorld world = (MyWorld) getWorld();
         }
     }    
+    /**
+     * If the respawn object is hit, then sound is played and object is 
+     * removed
+     */
     public void hitreg()
     {
         MyWorld world = (MyWorld) getWorld();
@@ -44,7 +51,7 @@ public class finalbomb extends Actor
            hit = true;
            Greenfoot.playSound("marioded.wav");
            world.removeObject(target11);
-           //world.preparePlayer1_S();
+          
         }
         Actor target22 = getOneIntersectingObject(Player2_S.class);
         if (target22 != null)
@@ -52,7 +59,7 @@ public class finalbomb extends Actor
            hit = true;
            Greenfoot.playSound("marioded.wav");
            world.removeObject(target22);
-           //world.preparePlayer1_S();
+          
         }
     }
 }

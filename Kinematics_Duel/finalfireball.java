@@ -1,10 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class finalfireball here.
+ * finalfireball is the fireball object launched from player2
+ * Defines the motion of the finalfireball launched from player 2
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ * @version 9/22/19
  */
 public class finalfireball extends SmoothMover
 {
@@ -14,8 +18,9 @@ public class finalfireball extends SmoothMover
     long prevTime = 0;
     long curTime = 0;
     /**
-     * Act - do whatever the Cannonball wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Checks for collision midair. If there is a collision midair, the 
+     * object is removed. if there is no collision midair, then finalfireball
+     * keeps motion until it dectects one.
      */
     public void act() 
     {
@@ -32,7 +37,8 @@ public class finalfireball extends SmoothMover
     }    
     
     /**
-     * 
+     * Constructer, creates a new vector of motion for the finalfireball object 
+     * with an initial direction of 0(east) and a length of 6.
      */
     public finalfireball()
     {
@@ -40,7 +46,8 @@ public class finalfireball extends SmoothMover
     }
     
     /**
-     * 
+     * Constructer, sets the velocity of the finalfireball by refering to the parent
+     * SmoothMover Class
      */
     public finalfireball(Vector velocity)
     {
@@ -48,27 +55,21 @@ public class finalfireball extends SmoothMover
     }
     
     /**
-     * 
+     * Set the intiial location of finalfireball
      */
     @Override protected void addedToWorld(World world)
     {
         setLocation(getX(), getY());
     }
     /**
-     * 
+     * Checks for collision. If collision in mid air, finalfirebball removed, "fire.wav" played
+     * and graze object added at the same location. If collision on ground, "fire.wav" is
+     * also played but kaboom object is added at the same location. finalfireball also removed.
      */
     private void checkCollision()
     {
         MyWorld world = (MyWorld) getWorld();
         Actor midair = getOneIntersectingObject(Fireball.class);
-        /*
-        if (midair != null && mid == false)
-        {
-            mid = true;
-            Greenfoot.playSound("fire.wav");
-            world.addObject(new finalbomb(),this.getX(), this.getY());
-        }
-        */
         if (getY()>601)
         {
             Greenfoot.playSound("fire.wav");

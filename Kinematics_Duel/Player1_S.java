@@ -1,16 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player1_S here.
+ * Defines action of player 1 respawn
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ * @version 9/22/19
  */
 public class Player1_S extends Actor
 {
     /**
-     * Act - do whatever the Player1_S wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Move tank and play sounds depending on what key is hit
+     * If "a" and x > 100, move left 4
+     * If "d" and x < 1000 move right 4
+     * If "w" and taunt does not equal 1 rotate tank counterclockwise, set taunt to 1, play sound
+     * if "s" and taunt does not equal 2 rotate clockwise, set taunt to 2, play sound
      */
     
     int rotateRate = 30;
@@ -40,7 +46,10 @@ public class Player1_S extends Actor
             Greenfoot.playSound("missionfailed.mp3");
             taunt = 2;
         }
-    }   
+    }
+    /**
+     * Constructer, rotation tank
+     */
     public Player1_S(int rotation)
     {
         setRotation(rotation);

@@ -1,7 +1,7 @@
 #BlueJ class context
 comment0.target=DuelTitle
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ DuelTitle\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Image\ of\ title\n\ \n\ @author\ Avi\ Patel\n\ @author\ Josh\ Koh\n\ @author\ Tariq\ Rahman\n\ @author\ Sujal\ Nahata\n\ @version\ 9/22/19\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ DuelTitle\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\n\ No\ actions\!\!\!\!\!\n
 numComments=2

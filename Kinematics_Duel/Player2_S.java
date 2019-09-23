@@ -1,16 +1,22 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player2_S here.
+ * Defines action of player 2 respawn
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ * @version 9/22/19
  */
 public class Player2_S extends Actor
 {
     /**
-     * Act - do whatever the Player2_S wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Move tank and play sounds depending on what key is hit
+     * If "left" and x > 100, move left 4
+     * If "right" and x < 1000 move right 4
+     * If "up" and taunt does not equal 1 rotate tank counterclockwise, set taunt to 1, play sound
+     * if "down" and taunt does not equal 2, rotate tank clockwise, set taunt to 2, play sound
      */
     
     int rotateRate = 30;
@@ -41,6 +47,9 @@ public class Player2_S extends Actor
             taunt = 2;
         }
     }    
+    /**
+     * Constructer, rotation tank
+    */
     public Player2_S(int rotation)
     {
         setRotation(rotation);

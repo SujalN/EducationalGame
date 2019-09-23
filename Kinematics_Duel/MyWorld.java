@@ -1,10 +1,12 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class MyWorld here.
- * 
- * @author (Sujal Nahata) 
- * @version (11/2/17)
+ * Initialize the world with the background, dimensions and the objects
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata   
+ * @version 9/22/19
  */
 public class MyWorld extends World
 {
@@ -17,7 +19,7 @@ public class MyWorld extends World
     public static final Vector GRAVITY = new Vector(0.0, 0.2);
     
     /**
-     * Constructor for objects of class MyWorld.
+     * Contstructer that intitializes objects for MyWorld
      * 
      */
     public MyWorld()
@@ -29,16 +31,25 @@ public class MyWorld extends World
         prepareTitle();
         //playmusic();
     }
+    /**
+     * Create Player1 object and add to the world
+     */
     public void preparePlayer1()
     {
         Player1 p1 = new Player1();
         addObject(p1, 200, 600);
     }
+    /**
+     * Create Player2 object and add to world
+     */
     public void preparePlayer2()
     {
         Player2 p2 = new Player2();
         addObject(p2, 878, 600);
     }
+    /**
+     * Create DuelTitle object and add to world
+     */
     public void prepareTitle()
     {
         DuelTitle title = new DuelTitle();

@@ -1,16 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class graze here.
- * 
- * @author (your name) 
- * @version (a version number or a date)
+ * Define the behvior of Midair explosions
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ *      
+ * @version 9/22/19
  */
 public class graze extends Actor
 {
     /**
-     * Act - do whatever the graze wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Call the hitreg function and set the transparancy to give an explosion
+     * effect
      */
     public void act() 
     {
@@ -28,13 +31,20 @@ public class graze extends Actor
         }
         
     }    
+    /**
+     * If a midair explosion occurs where an a movable player(Player1 or Player2)
+     * is present, then remove that object and also remove the other non, moving
+     * player. 
+     * If a midair explosion occurs near a respawn player(Player1_S or Player2_S,
+     * then remove that player and do nothing
+     */
     public void hitreg()
     {
         MyWorld world = (MyWorld) getWorld();
         Actor target1 = getOneIntersectingObject(Player1.class);
         if (target1 != null)
         {
-           //Greenfoot.playSound("marioded.wav");
+           Greenfoot.playSound("marioded.wav");
            world.removeObject(target1);
            getWorld().removeObjects(getWorld().getObjects(Player2.class));
            //world.preparePlayer2_S();

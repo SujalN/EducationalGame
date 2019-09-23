@@ -1,9 +1,10 @@
 #BlueJ class context
 comment0.target=graze
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ graze\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ Define\ the\ behvior\ of\ Midair\ explosions\n\ @author\ Avi\ Patel\n\ @author\ Josh\ Koh\n\ @author\ Tariq\ Rahman\n\ @author\ Sujal\ Nahata\n\ \ \ \ \ \ \n\ @version\ 9/22/19\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ graze\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\n\ Call\ the\ hitreg\ function\ and\ set\ the\ transparancy\ to\ give\ an\ explosion\n\ effect\n
 comment2.params=
 comment2.target=void\ hitreg()
+comment2.text=\n\ If\ a\ midair\ explosion\ occurs\ where\ an\ a\ movable\ player(Player1\ or\ Player2)\n\ is\ present,\ then\ remove\ that\ object\ and\ also\ remove\ the\ other\ non,\ moving\n\ player.\ \n\ If\ a\ midair\ explosion\ occurs\ near\ a\ respawn\ player(Player1_S\ or\ Player2_S,\n\ then\ remove\ that\ player\ and\ do\ nothing\n
 numComments=3

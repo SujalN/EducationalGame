@@ -1,16 +1,19 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class kaboom here.
+ * Define colisions that happen on the ground
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ * @version 9/22/19
  */
 public class kaboom extends Actor
 {
     /**
-     * Act - do whatever the kaboom wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Calls hitreg method
+     * Sets transparancy of explosion to create an explosion effect
      */
     public void act() 
     {
@@ -25,6 +28,10 @@ public class kaboom extends Actor
             getWorld().removeObject(this);
         }
     }    
+    /**
+     * If ground collision hits a movable player, then remove that player and the other player too
+     * If ground collision hits a respawn player then remove that player
+     */
     public void hitreg()
     {
         MyWorld world = (MyWorld) getWorld();

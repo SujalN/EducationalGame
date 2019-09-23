@@ -1,15 +1,19 @@
 #BlueJ class context
 comment0.target=Player1
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Player1\ here.\r\n\ \r\n\ @author\ (Ricky\ Chavez)\ \r\n\ @version\ (11/2/17)\r\n
+comment0.text=\n\ Defines\ the\ actions\ of\ player\ 1\ moving\ object\n\ @author\ Avi\ Patel\n\ @author\ Josh\ Koh\n\ @author\ Tariq\ Rahman\n\ @author\ Sujal\ Nahata\n\ \ \ \ \ \ \n\ @version\ 9/22/19\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Cannon\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\n\ Defines\ happens\ if\ key\ is\ clicked\n\ If\ "a"\ is\ hit,\ x\ >\ 100,\ move\ object\ left\ 4\n\ If\ "d"\ is\ hit,\ x\ <\ 1000,\ and\ no\ collision,\ move\ object\ right\ 4\n\ If\ "w"\ is\ hit,\ and\ rotateIntegration\ >\=\ -90,\ rotate\ counterclockwise\n\ If\ "s"\ is\ hit,\ and\ rotateIntegration\ <\=\ 0,\ rotate\ clockwise\n\ If\ "space"\ is\ hit,\ fire\n
 comment2.params=
 comment2.target=void\ shoot()
+comment2.text=\n\ Adjust\ angle\ for\ image\n
 comment3.params=
 comment3.target=boolean\ collideCheck()
+comment3.text=\n\ check\ for\ collision\n
 comment4.params=
 comment4.target=void\ fire()
+comment4.text=\n\ set\ launch\ and\ rotation\ of\ tank\n
 comment5.params=
 comment5.target=void\ freeze()
+comment5.text=\n\ If\ collision\ is\ true,\ then\ freeze\ the\ tanks,\ create\ a\ Player1_S\ object,\ and\ ask\ for\ launch\ angle/velocity\n
 numComments=6

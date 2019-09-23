@@ -1,10 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Player1 here.
- * 
- * @author (Ricky Chavez) 
- * @version (11/2/17)
+ * Defines the actions of player 1 moving object
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ *      
+ * @version 9/22/19
  */
 public class Player1 extends Actor
 {
@@ -18,8 +21,12 @@ public class Player1 extends Actor
     int rotateIntegration = 0;
 
     /**
-     * Act - do whatever the Cannon wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Defines happens if key is clicked
+     * If "a" is hit, x > 100, move object left 4
+     * If "d" is hit, x < 1000, and no collision, move object right 4
+     * If "w" is hit, and rotateIntegration >= -90, rotate counterclockwise
+     * If "s" is hit, and rotateIntegration <= 0, rotate clockwise
+     * If "space" is hit, fire
      */
     public void act() 
     {
@@ -48,10 +55,16 @@ public class Player1 extends Actor
         reloadFireballDelayCount++;
         freeze();
     } 
+    /**
+     * Adjust angle for image
+     */
     private void shoot()
     {
-        int angle = getRotation(); // adjust angle for image
+        int angle = getRotation(); 
     }
+    /**
+     * check for collision
+     */
     public boolean collideCheck()
     {
         Actor target2 = getOneIntersectingObject(Player2.class);
@@ -64,6 +77,9 @@ public class Player1 extends Actor
             return false;
         }
     }
+    /**
+     * set launch and rotation of tank
+     */
     private void fire()
     {
         if (reloadFireballDelayCount >= reloadFireball)
@@ -79,6 +95,9 @@ public class Player1 extends Actor
             reloadFireballDelayCount = 0;
         }
     }
+    /**
+     * If collision is true, then freeze the tanks, create a Player1_S object, and ask for launch angle/velocity
+     */
     public void freeze()
     {
         MyWorld world = (MyWorld) getWorld();

@@ -1,10 +1,13 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 import java.util.Scanner; 
 /**
- * Write a description of class Player2 here.
- * 
- * @author (Ricky Chavez) 
- * @version (11/2/17)
+ * Defines the actions of player 2 moving object
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ *      
+ * @version 9/22/19
  */
 public class Player2 extends Actor
 {
@@ -18,8 +21,12 @@ public class Player2 extends Actor
     int rotateIntegration = 0;
 
     /**
-     * Act - do whatever the Cannon wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Defines happens if key is clicked
+     * If "left" is hit, x > 100, and no collision, move object left 4
+     * If "right" is hit, x < 1000, move object right 4
+     * If "up" is hit, and rotateIntegration >= -90, rotate counterclockwise
+     * If "down" is hit, and rotateIntegration <= 0, rotate clockwise
+     * If "shift" is hit, fire
      */
     public void act() 
     {
@@ -49,6 +56,9 @@ public class Player2 extends Actor
         reloadFireballDelayCount++;
         freeze();
     } 
+    /**
+     * Set launch and rotation of tank
+     */
     private void blam()
     {
         if (reloadFireballDelayCount >= reloadFireball)
@@ -64,6 +74,9 @@ public class Player2 extends Actor
             reloadFireballDelayCount = 0;
         }
     }
+    /**
+     * Check for collisions 
+     */
     public boolean collideCheck()
     {
         Actor target1 = getOneIntersectingObject(Player1.class);
@@ -76,6 +89,9 @@ public class Player2 extends Actor
             return false;
         }
     }
+    /**
+     * If collision is true, then freeze the tanks, create a Player1_S object, and ask for launch angle/velocity
+     */
     public void freeze()
     {
         MyWorld world = (MyWorld) getWorld();

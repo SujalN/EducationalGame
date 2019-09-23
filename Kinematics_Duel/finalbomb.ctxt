@@ -1,8 +1,9 @@
 #BlueJ class context
 comment0.target=finalbomb
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ finalbomb\ here.\r\n\ \r\n\ @author\ (your\ name)\ \r\n\ @version\ (a\ version\ number\ or\ a\ date)\r\n
+comment0.text=\n\ finalbomb\ defines\ actions\ of\ the\ last\ explosion\ that\ follows\ launching\n\ firebal\ with\ velocity\ equation\n\ \n\ @author\ Avi\ Patel\n\ @author\ Josh\ Koh\n\ @author\ Tariq\ Rahman\n\ @author\ Sujal\ Nahata\n\ @version\ 9/22/19\n
 comment1.params=
 comment1.target=void\ act()
 comment2.params=
 comment2.target=void\ hitreg()
+comment2.text=\n\ If\ the\ respawn\ object\ is\ hit,\ then\ sound\ is\ played\ and\ object\ is\ \n\ removed\n
 numComments=3

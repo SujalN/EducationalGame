@@ -1,16 +1,18 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class DuelTitle here.
+ * Image of title
  * 
- * @author (your name) 
- * @version (a version number or a date)
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ * @version 9/22/19
  */
 public class DuelTitle extends Actor
 {
     /**
-     * Act - do whatever the DuelTitle wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * No actions!!!!!
      */
     public void act() 
     {

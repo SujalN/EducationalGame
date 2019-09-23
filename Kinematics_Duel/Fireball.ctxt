@@ -1,19 +1,19 @@
 #BlueJ class context
 comment0.target=Fireball
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ Cannonball\ here.\r\n\ \r\n\ @author\ (Bryan\ Ortiz)\ \r\n\ @version\ (11/2/17)\r\n
+comment0.text=\n\ fireball\ is\ the\ fireball\ object\ launched\ from\ player1\n\ Defines\ the\ motion\ of\ the\ Fireball\ launched\ from\ player\ 1\n\ \n\ @author\ Avi\ Patel\n\ @author\ Josh\ Koh\n\ @author\ Tariq\ Rahman\n\ @author\ Sujal\ Nahata\n\ @version\ 9/22/19\n
 comment1.params=
 comment1.target=void\ act()
-comment1.text=\r\n\ Act\ -\ do\ whatever\ the\ Cannonball\ wants\ to\ do.\ This\ method\ is\ called\ whenever\r\n\ the\ 'Act'\ or\ 'Run'\ button\ gets\ pressed\ in\ the\ environment.\r\n
+comment1.text=\n\ Checks\ for\ collision\ midair.\ If\ there\ is\ a\ collision\ midair,\ the\ \n\ object\ is\ removed.\ if\ there\ is\ no\ collision\ midair,\ then\ Fireball\n\ keeps\ motion\ until\ it\ dectects\ one.\n
 comment2.params=
 comment2.target=Fireball()
-comment2.text=\r\n\ \r\n
+comment2.text=\n\ Constructer,\ creates\ a\ new\ vector\ of\ motion\ for\ the\ fireball\ object\ \n\ with\ an\ initial\ direction\ of\ 0(east)\ and\ a\ length\ of\ 6.\n
 comment3.params=velocity
 comment3.target=Fireball(Vector)
-comment3.text=\r\n\ \r\n
+comment3.text=\n\ Constructer,\ sets\ the\ velocity\ of\ the\ Fireball\ by\ refering\ to\ the\ parent\n\ SmoothMover\ Class\n
 comment4.params=world
 comment4.target=void\ addedToWorld(greenfoot.World)
-comment4.text=\r\n\ \r\n
+comment4.text=\n\ Set\ the\ intiial\ location\ of\ fireball\n
 comment5.params=
 comment5.target=void\ checkCollision()
-comment5.text=\r\n\ \r\n
+comment5.text=\n\ Checks\ for\ collision.\ If\ collision\ in\ mid\ air,\ cannonball\ removed,\ "fire.wav"\ played\n\ and\ graze\ object\ added\ at\ the\ same\ location.\ If\ collision\ on\ ground,\ "fire.wav"\ is\n\ also\ played\ but\ kaboom\ object\ is\ added\ at\ the\ same\ location.\ \n
 numComments=6

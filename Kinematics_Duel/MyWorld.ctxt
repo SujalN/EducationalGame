@@ -1,13 +1,16 @@
 #BlueJ class context
 comment0.target=MyWorld
-comment0.text=\r\n\ Write\ a\ description\ of\ class\ MyWorld\ here.\r\n\ \r\n\ @author\ (Sujal\ Nahata)\ \r\n\ @version\ (11/2/17)\r\n
+comment0.text=\n\ Initialize\ the\ world\ with\ the\ background,\ dimensions\ and\ the\ objects\n\ @author\ Avi\ Patel\n\ @author\ Josh\ Koh\n\ @author\ Tariq\ Rahman\n\ @author\ Sujal\ Nahata\ \ \ \n\ @version\ 9/22/19\n
 comment1.params=
 comment1.target=MyWorld()
-comment1.text=\r\n\ Constructor\ for\ objects\ of\ class\ MyWorld.\r\n\ \r\n
+comment1.text=\n\ Contstructer\ that\ intitializes\ objects\ for\ MyWorld\n\ \n
 comment2.params=
 comment2.target=void\ preparePlayer1()
+comment2.text=\n\ Create\ Player1\ object\ and\ add\ to\ the\ world\n
 comment3.params=
 comment3.target=void\ preparePlayer2()
+comment3.text=\n\ Create\ Player2\ object\ and\ add\ to\ world\n
 comment4.params=
 comment4.target=void\ prepareTitle()
+comment4.text=\n\ Create\ DuelTitle\ object\ and\ add\ to\ world\n
 numComments=5

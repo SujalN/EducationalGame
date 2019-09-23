@@ -1,10 +1,14 @@
 import greenfoot.*;  // (World, Actor, GreenfootImage, Greenfoot and MouseInfo)
 
 /**
- * Write a description of class Cannonball here.
+ * fireball is the fireball object launched from player1
+ * Defines the motion of the Fireball launched from player 1
  * 
- * @author (Bryan Ortiz) 
- * @version (11/2/17)
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
+ * @version 9/22/19
  */
 public class Fireball extends SmoothMover
 {
@@ -14,8 +18,9 @@ public class Fireball extends SmoothMover
     long prevTime = 0;
     long curTime = 0;
     /**
-     * Act - do whatever the Cannonball wants to do. This method is called whenever
-     * the 'Act' or 'Run' button gets pressed in the environment.
+     * Checks for collision midair. If there is a collision midair, the 
+     * object is removed. if there is no collision midair, then Fireball
+     * keeps motion until it dectects one.
      */
     public void act() 
     {
@@ -32,7 +37,8 @@ public class Fireball extends SmoothMover
     }    
     
     /**
-     * 
+     * Constructer, creates a new vector of motion for the fireball object 
+     * with an initial direction of 0(east) and a length of 6.
      */
     public Fireball()
     {
@@ -40,7 +46,8 @@ public class Fireball extends SmoothMover
     }
     
     /**
-     * 
+     * Constructer, sets the velocity of the Fireball by refering to the parent
+     * SmoothMover Class
      */
     public Fireball(Vector velocity)
     {
@@ -48,14 +55,16 @@ public class Fireball extends SmoothMover
     }
     
     /**
-     * 
+     * Set the intiial location of fireball
      */
     @Override protected void addedToWorld(World world)
     {
         setLocation(getX(), getY());
     }
     /**
-     * 
+     * Checks for collision. If collision in mid air, cannonball removed, "fire.wav" played
+     * and graze object added at the same location. If collision on ground, "fire.wav" is
+     * also played but kaboom object is added at the same location. 
      */
     private void checkCollision()
     {

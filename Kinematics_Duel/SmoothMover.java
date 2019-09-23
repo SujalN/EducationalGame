@@ -4,11 +4,12 @@ import greenfoot.*;  // (World, Actor, GreenfootImage, and Greenfoot)
  * A variation of an actor that maintains precise location (using doubles for the co-ordinates
  * instead of ints). It also maintains a current velocity in form of a velocity vector.
  * 
- * @author Poul Henriksen
- * @author Michael Kolling
- *   (Including improvements suggested by J. Buhl.)
+ * @author Avi Patel
+ * @author Josh Koh
+ * @author Tariq Rahman
+ * @author Sujal Nahata
  *      
- * @version 2.2
+ * @version 9/22/19
  */
 public abstract class SmoothMover extends Actor
 {
